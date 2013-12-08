@@ -8,8 +8,8 @@ class Employee
   def initialize(first_name, last_name, annual_income, tax_paid, tax_rate)
     @first_name = first_name || "[first name]"
     @last_name = last_name || "[last name]"
-    @annual_income = annual_income || 0
-    @tax_paid = tax_paid || 0
+    @annual_income = annual_income.to_f || 0
+    @tax_paid = tax_paid.to_f || 0
     @tax_rate = (tax_rate.to_f/100) || 0
   end
 

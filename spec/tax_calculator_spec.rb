@@ -8,16 +8,11 @@ require 'pry'
 
 describe TaxCalculator do
 
-  let(:employee) { Employee.new('Paul','Dornfeld',100000, 30000, 30) }
+  let(:employee) { Employee.new('Paul','Dornfeld',100, 10, 10) }
 
-  it 'should calculate an amount due' do
-    paul = TaxCalculator.new(employee)
-    expect(paul.amount_due).to eql(30000)
-  end
-
-  it 'should calculate a amount owed' do
-    paul = TaxCalculator.new(employee)
-    expect(paul.amount_owed).to eql(0)
+  it 'wil calculate a liability if someone owes taxes' do
+    person = TaxCalculator.liability(employee)
+    expect(person).to eql(0)
   end
 
 

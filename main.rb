@@ -20,9 +20,8 @@ employees = EmployeeReader.load('tax_data.csv')
 
 
 employees.each do |employee|
-  taxes = TaxCalculator.new(employee)
-  puts taxes.amount_due
-  puts taxes.amount_owed
+  taxes = TaxCalculator.liability(employee)
+  puts "#{employee.first_name} #{employee.last_name} #{taxes}"
 end
 
 

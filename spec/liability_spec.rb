@@ -7,8 +7,7 @@ describe Liability do
   let(:employee) { Employee.new('Paul','Dornfeld',100000, 20000, 30) }
 
   it 'wil calculate a liability if someone owes taxes' do
-    liability = Liability.new(employee, 1000, 3000)
-    expect(liability.calculate).to eql(2000)
+    person = TaxCalculator.liability(employee).to eql(0)
   end
 
 

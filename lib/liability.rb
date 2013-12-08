@@ -1,12 +1,8 @@
 class Liability
 
-  def self.calculate(employee, amount_due, amount_owed)
-    @employee = employee
-    @amount_due = amount_due
+  def self.calculate(amount_owed)
     @amount_owed = amount_owed
-
   end
-
 
 
 
