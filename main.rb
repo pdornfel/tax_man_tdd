@@ -1,5 +1,9 @@
 require_relative 'lib/employee'
+require_relative 'lib/liability'
 require_relative 'lib/employee_reader'
+require_relative 'lib/tax_calculator'
+
+require 'pry'
 
 
 # ** Sample Output **
@@ -14,4 +18,14 @@ require_relative 'lib/employee_reader'
 
 employees = EmployeeReader.load('tax_data.csv')
 
-puts employees.inspect
+
+employees.each do |employee|
+  taxes = TaxCalculator.new(employee)
+  puts taxes.amount_due
+  puts taxes.amount_owed
+end
+
+
+
+
+

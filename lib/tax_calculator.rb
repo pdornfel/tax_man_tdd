@@ -1,8 +1,20 @@
 class TaxCalculator
 
+  def initialize(employee)
+    @employee = employee
+  end
+
   def self.liability(employee)
     @employee = employee
     Liability.new(employee, amount_due, amount_owed)
+  end
+
+  def amount_due
+    (@employee.annual_income.to_i * (1- @employee.tax_rate)).to_i
+  end
+
+  def amount_owed
+    (@employee.tax_paid.to_i - amount_due).to_i
   end
 
 

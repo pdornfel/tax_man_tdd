@@ -28,7 +28,7 @@ describe Employee do
   end
 
   it 'should have a tax rate' do
-    expect(employee.tax_rate).to eql 35
+    expect(employee.tax_rate).to eql(0.35)
   end
 
 

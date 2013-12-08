@@ -10,7 +10,7 @@ class Employee
     @last_name = last_name || "[last name]"
     @annual_income = annual_income || 0
     @tax_paid = tax_paid || 0
-    @tax_rate = tax_rate || 0
+    @tax_rate = (tax_rate.to_f/100) || 0
   end
 
 end
